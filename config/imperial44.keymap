@@ -6,6 +6,8 @@
 
 &mt { flavor = "balanced"; };
 
+&sk { quick-release; };
+
 / {
     behaviors {
         mt_l: mt_l {
