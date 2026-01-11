@@ -1,0 +1,12 @@
+.build
+.direnv
+.west
+modules
+firmware
+zephyr
+zmk
+draw/base.yaml
+ergohaven-zmk-qube
+ergohaven-zmk
+zmk-pmw3610-driver
+zmk-raw-hid
