@@ -4,6 +4,7 @@ default:
 config := absolute_path('config')
 build := absolute_path('.build')
 out := absolute_path('firmware')
+out2 := "/tmp/ergohaven"
 draw := absolute_path('draw')
 
 # parse build.yaml and filter targets by expression
@@ -26,8 +27,10 @@ _build_single $board $shield $snippet $artifact *west_args:
 
     if [[ -f "$build_dir/zephyr/zmk.uf2" ]]; then
         mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out }}/$artifact.uf2"
+        mkdir -p "{{ out2 }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out2 }}/$artifact.uf2"
     else
         mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.bin" "{{ out }}/$artifact.bin"
+        mkdir -p "{{ out2 }}" && cp "$build_dir/zephyr/zmk.bin" "{{ out2 }}/$artifact.bin"
     fi
 
 # build firmware for matching targets
